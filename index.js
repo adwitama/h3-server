@@ -17,6 +17,18 @@ app.get("/h3/geo/:hexId", (req, res, next) => {
  res.json(response);
 });
 
+app.get("/h3/boundary/:hexId", (req, res, next) => {
+ const hexId = req.params.hexId
+ const hexCenterCoordinates = h3.h3ToGeo(hexId)	
+ const hexBoundary = h3.h3ToGeoBoundary(hexId)	
+ const response = {
+   hexagonId: hexId,
+   areaCenter: hexCenterCoordinates,
+   boundary: hexBoundary
+ }
+ res.json(response);
+});
+
 app.listen(port, () => {
    console.log("Server running in port: " + port)
 })
