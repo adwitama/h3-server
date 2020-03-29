@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "h3-js": "^3.6.3"
+    "h3-js": "^3.6.3",
+    "pm2": "^4.2.3"
   }
 }
